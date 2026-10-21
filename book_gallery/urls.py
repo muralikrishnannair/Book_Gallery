@@ -1,0 +1,37 @@
+"""
+URL configuration for book_gallery project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/6.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from book_app import views
+from library_app.views import *
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('Harry_Potter/',views.Harry_Potter.as_view()),
+    path('Gullivers_Travels/', views.Gullivers_Travels.as_view()),
+    path('Pride_and_Prejudice/', views.Pride_and_Prejudice.as_view()),
+    path('The_Alchemist/', views.The_Alchemist.as_view()),
+    path('Frankenstein/', views.Frankenstein.as_view()),
+
+    path('Kochi_Public_Library/', Kochi_Public_Library.as_view()),
+    path('Kollam_Public_Library/', Kollam_Public_Library.as_view()),
+    path('Kottayam_Public_Library/', Kottayam_Public_Library.as_view()),
+    path('Kannur_Public_Library/', Kannur_Public_Library.as_view()),
+    path('Thrissur_Public_Library/', Thrissur_Public_Library.as_view()),
+
+]
+
